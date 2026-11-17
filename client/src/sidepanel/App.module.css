@@ -1,0 +1,467 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--nexus-bg-base);
+  color: var(--nexus-text-primary);
+  box-sizing: border-box;
+  transition: background-color var(--nexus-transition-base), color var(--nexus-transition-base);
+}
+
+/* ── Nexus Bar (Compact Header) ─────────────────────────────────────────── */
+
+.nexusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--nexus-space-3) var(--nexus-space-4);
+  background-color: var(--nexus-bg-header);
+  border-bottom: 1px solid var(--nexus-border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background-color var(--nexus-transition-base), border-color var(--nexus-transition-base);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--nexus-space-2);
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--nexus-accent-primary);
+  flex-shrink: 0;
+  transition: color var(--nexus-transition-base);
+}
+
+.brandTitle {
+  font-size: var(--nexus-text-base);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--nexus-text-primary);
+}
+
+.versionBadge {
+  font-family: var(--nexus-font-mono);
+  font-size: var(--nexus-text-xs);
+  font-weight: 600;
+  color: var(--nexus-accent-primary);
+  background-color: var(--nexus-accent-subtle);
+  padding: 1px 6px;
+  border-radius: var(--nexus-radius-sm);
+  border: 1px solid var(--nexus-border-accent);
+  transition: background-color var(--nexus-transition-base),
+              color var(--nexus-transition-base),
+              border-color var(--nexus-transition-base);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--nexus-space-2);
+}
+
+/* ── Portal Status Indicator ────────────────────────────────────────────── */
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--nexus-radius-full);
+  font-size: var(--nexus-text-xs);
+  font-weight: 500;
+  border: 1px solid var(--nexus-border-default);
+  background-color: var(--nexus-bg-elevated);
+  color: var(--nexus-text-secondary);
+  user-select: none;
+  transition: background-color var(--nexus-transition-base),
+              border-color var(--nexus-transition-base),
+              color var(--nexus-transition-base);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--nexus-radius-full);
+  background-color: var(--nexus-text-tertiary);
+  flex-shrink: 0;
+  transition: background-color var(--nexus-transition-base), box-shadow var(--nexus-transition-base);
+}
+
+.statusNotConnected .statusDot {
+  background-color: var(--nexus-text-tertiary);
+}
+
+.statusConnecting .statusDot {
+  background-color: var(--nexus-status-warning);
+  box-shadow: 0 0 6px rgba(217, 131, 36, 0.4);
+}
+
+.statusReady .statusDot {
+  background-color: var(--nexus-status-safe);
+  box-shadow: 0 0 6px rgba(33, 155, 117, 0.4);
+}
+
+.statusError .statusDot {
+  background-color: var(--nexus-status-danger);
+  box-shadow: 0 0 6px rgba(200, 50, 50, 0.4);
+}
+
+/* ── Theme Toggle Button ────────────────────────────────────────────────── */
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: var(--nexus-radius-md);
+  background-color: var(--nexus-bg-elevated);
+  border: 1px solid var(--nexus-border-default);
+  color: var(--nexus-accent-primary);
+  cursor: pointer;
+  transition: background-color var(--nexus-transition-fast),
+              color var(--nexus-transition-fast),
+              border-color var(--nexus-transition-fast);
+}
+
+.themeToggle:hover {
+  background-color: var(--nexus-accent-subtle);
+  color: var(--nexus-accent-hover);
+  border-color: var(--nexus-border-accent);
+}
+
+.themeToggle:active {
+  background-color: var(--nexus-bg-active);
+  color: var(--nexus-accent-active);
+}
+
+.themeToggle svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ── Main Viewport Content ──────────────────────────────────────────────── */
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--nexus-space-5) var(--nexus-space-4);
+  gap: var(--nexus-space-4);
+}
+
+/* ── Main Ready Card ────────────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--nexus-space-6) var(--nexus-space-4);
+  background-color: var(--nexus-bg-card);
+  border: 1px solid var(--nexus-border-default);
+  border-radius: var(--nexus-radius-lg);
+  box-shadow: var(--nexus-shadow-md);
+  transition: background-color var(--nexus-transition-base),
+              border-color var(--nexus-transition-fast),
+              box-shadow var(--nexus-transition-base);
+}
+
+.card:hover {
+  border-color: var(--nexus-border-accent);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--nexus-radius-lg);
+  background-color: var(--nexus-accent-subtle);
+  border: 1px solid var(--nexus-border-accent);
+  color: var(--nexus-accent-primary);
+  margin-bottom: var(--nexus-space-4);
+  transition: background-color var(--nexus-transition-base),
+              border-color var(--nexus-transition-base),
+              color var(--nexus-transition-base);
+}
+
+.iconWrapper svg {
+  width: 26px;
+  height: 26px;
+}
+
+.cardTitle {
+  font-size: var(--nexus-text-lg);
+  font-weight: 700;
+  color: var(--nexus-text-primary);
+  margin-bottom: var(--nexus-space-2);
+}
+
+.cardDescription {
+  font-size: var(--nexus-text-sm);
+  color: var(--nexus-text-secondary);
+  max-width: 290px;
+  line-height: 1.5;
+  margin-bottom: var(--nexus-space-4);
+}
+
+.featureList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nexus-space-2);
+  margin-top: var(--nexus-space-2);
+}
+
+/* ── Status Rows ────────────────────────────────────────────────────────── */
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: var(--nexus-space-3);
+  padding: 10px 12px;
+  background-color: var(--nexus-bg-row);
+  border: 1px solid var(--nexus-border-subtle);
+  border-radius: var(--nexus-radius-md);
+  font-size: var(--nexus-text-xs);
+  font-weight: 500;
+  color: var(--nexus-text-secondary);
+  text-align: left;
+  transition: background-color var(--nexus-transition-base),
+              border-color var(--nexus-transition-base),
+              color var(--nexus-transition-base);
+}
+
+.featureItem:hover {
+  border-color: var(--nexus-border-default);
+}
+
+.featureIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--nexus-accent-primary);
+  flex-shrink: 0;
+  transition: color var(--nexus-transition-base);
+}
+
+/* ── Active Tab Card ────────────────────────────────────────────────────── */
+
+.activeTabCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nexus-space-3);
+  padding: var(--nexus-space-4);
+  background-color: var(--nexus-bg-card);
+  border: 1px solid var(--nexus-border-default);
+  border-radius: var(--nexus-radius-lg);
+  box-shadow: var(--nexus-shadow-sm);
+  transition: background-color var(--nexus-transition-base),
+              border-color var(--nexus-transition-fast),
+              box-shadow var(--nexus-transition-base);
+}
+
+.activeTabCard:hover {
+  border-color: var(--nexus-border-accent);
+}
+
+.activeTabHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nexus-space-2);
+}
+
+.tabBadge {
+  font-family: var(--nexus-font-mono);
+  font-size: var(--nexus-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nexus-text-secondary);
+  background-color: var(--nexus-bg-row);
+  padding: 2px 8px;
+  border-radius: var(--nexus-radius-sm);
+  border: 1px solid var(--nexus-border-subtle);
+}
+
+.tabStateBadge {
+  font-family: var(--nexus-font-mono);
+  font-size: var(--nexus-text-xs);
+  font-weight: 700;
+  color: var(--nexus-accent-primary);
+  background-color: var(--nexus-accent-subtle);
+  padding: 2px 8px;
+  border-radius: var(--nexus-radius-sm);
+  border: 1px solid var(--nexus-border-accent);
+}
+
+.tabDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nexus-space-1);
+}
+
+.tabTitle {
+  font-size: var(--nexus-text-sm);
+  font-weight: 600;
+  color: var(--nexus-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tabUrl {
+  font-family: var(--nexus-font-mono);
+  font-size: var(--nexus-text-xs);
+  color: var(--nexus-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tabMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--nexus-space-2);
+  font-size: var(--nexus-text-xs);
+  color: var(--nexus-text-tertiary);
+  margin-top: var(--nexus-space-1);
+}
+
+/* ── Preflight Notification Notice ──────────────────────────────────────── */
+
+.preflightNotice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nexus-space-3);
+  padding: 10px 12px;
+  background-color: var(--nexus-accent-subtle);
+  border: 1px solid var(--nexus-border-accent);
+  border-radius: var(--nexus-radius-md);
+  margin-top: var(--nexus-space-1);
+}
+
+.noticeIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--nexus-status-safe);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.noticeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.noticeTitle {
+  font-size: var(--nexus-text-xs);
+  font-weight: 600;
+  color: var(--nexus-text-primary);
+}
+
+.noticeDetail {
+  font-family: var(--nexus-font-mono);
+  font-size: 11px;
+  color: var(--nexus-text-secondary);
+}
+
+/* ── Error & Reconnect State ────────────────────────────────────────────── */
+
+.errorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--nexus-space-6) var(--nexus-space-4);
+  background-color: var(--nexus-bg-card);
+  border: 1px solid var(--nexus-status-danger);
+  border-radius: var(--nexus-radius-lg);
+  box-shadow: var(--nexus-shadow-md);
+}
+
+.errorIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--nexus-radius-lg);
+  background-color: rgba(200, 50, 50, 0.1);
+  border: 1px solid var(--nexus-status-danger);
+  color: var(--nexus-status-danger);
+  margin-bottom: var(--nexus-space-4);
+}
+
+.errorIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.errorTitle {
+  font-size: var(--nexus-text-lg);
+  font-weight: 700;
+  color: var(--nexus-text-primary);
+  margin-bottom: var(--nexus-space-2);
+}
+
+.errorDescription {
+  font-size: var(--nexus-text-sm);
+  color: var(--nexus-text-secondary);
+  max-width: 290px;
+  line-height: 1.5;
+  margin-bottom: var(--nexus-space-4);
+}
+
+.reconnectButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nexus-space-2);
+  padding: 8px 16px;
+  border-radius: var(--nexus-radius-md);
+  background-color: var(--nexus-accent-primary);
+  color: #FFFFFF;
+  border: none;
+  font-size: var(--nexus-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--nexus-transition-fast),
+              transform var(--nexus-transition-fast);
+}
+
+.reconnectButton:hover {
+  background-color: var(--nexus-accent-hover);
+}
+
+.reconnectButton:active {
+  background-color: var(--nexus-accent-active);
+  transform: scale(0.98);
+}
+
+.buttonIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Footer Metadata ────────────────────────────────────────────────────── */
+
+.footer {
+  padding: var(--nexus-space-3) var(--nexus-space-4);
+  text-align: center;
+  font-size: var(--nexus-text-xs);
+  color: var(--nexus-text-tertiary);
+  border-top: 1px solid var(--nexus-border-subtle);
+  transition: border-color var(--nexus-transition-base), color var(--nexus-transition-base);
+}

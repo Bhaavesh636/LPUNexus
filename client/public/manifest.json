@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "LpuNexus",
+  "version": "0.1.0",
+  "description": "Privacy-first academic copilot for LPU students",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Open LpuNexus"
+  },
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://ums.lpu.in/*", "*://studentums.lpu.in/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["sidePanel", "storage", "tabs"],
+  "host_permissions": [
+    "*://ums.lpu.in/*",
+    "*://studentums.lpu.in/*"
+  ]
+}

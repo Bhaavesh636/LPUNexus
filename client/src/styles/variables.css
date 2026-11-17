@@ -1,0 +1,119 @@
+/* ==========================================================================
+   LpuNexus Design Tokens
+   Visual Identity: Warm Cream + Strong Terracotta (Dual Theme)
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+  /* ── Backgrounds & Surfaces (Warm Cream - Default) ─────────────────────── */
+  --nexus-bg-base:            #FAF3EC; /* Main page background */
+  --nexus-bg-header:          #F8EEE5; /* Nexus Bar header */
+  --nexus-bg-surface:         #F3E8DE; /* Secondary background */
+  --nexus-bg-card:            #FFFAF5; /* Primary card surface */
+  --nexus-bg-elevated:        #FFFDFC; /* Elevated surfaces / modal / inputs */
+  --nexus-bg-elevated-hover:  #FBF2EA; /* Hover for elevated elements */
+  --nexus-bg-active:          #F0E0D2; /* Pressed/active states */
+  --nexus-bg-row:             #F8EEE5; /* Status feature row background */
+
+  /* ── Borders & Dividers ───────────────────────────────────────────────── */
+  --nexus-border-subtle:      #F0E3D8; /* Subtle dividers */
+  --nexus-border-default:     #E8D6C8; /* Card & container borders */
+  --nexus-border-accent:      #E9B894; /* Accent-tinted borders */
+  --nexus-border-focus:       #C66A32; /* Keyboard / interactive focus ring */
+
+  /* ── Brand & Strong Terracotta Accents ────────────────────────────────── */
+  --nexus-accent-primary:     #C66A32; /* Primary strong terracotta */
+  --nexus-accent-hover:       #AD5728; /* Terracotta hover */
+  --nexus-accent-active:      #93471F; /* Terracotta active/pressed */
+  --nexus-accent-subtle:      #FCEBDD; /* Soft peach/terracotta badge bg */
+  --nexus-accent-muted:       rgba(198, 106, 50, 0.22);
+
+  /* ── Typography & Foreground ──────────────────────────────────────────── */
+  --nexus-text-primary:       #252B36; /* High-contrast charcoal */
+  --nexus-text-secondary:     #596273; /* Muted slate for metadata */
+  --nexus-text-tertiary:      #8C96A6; /* Tertiary/placeholder */
+  --nexus-text-inverse:       #FFFFFF; /* Pure white on accent backgrounds */
+
+  /* ── Academic Status Indicators ───────────────────────────────────────── */
+  --nexus-status-safe:        #219B75;
+  --nexus-status-safe-bg:     rgba(33, 155, 117, 0.12);
+  --nexus-status-warning:     #D99A36;
+  --nexus-status-warning-bg:  rgba(217, 154, 54, 0.12);
+  --nexus-status-error:       #D85F65;
+  --nexus-status-error-bg:    rgba(216, 95, 101, 0.12);
+
+  /* ── Shadows ──────────────────────────────────────────────────────────── */
+  --nexus-shadow-sm:          0 1px 3px rgba(198, 106, 50, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --nexus-shadow-md:          0 4px 12px rgba(198, 106, 50, 0.07), 0 2px 4px rgba(0, 0, 0, 0.03);
+
+  /* ── Typography Scale & Grid ──────────────────────────────────────────── */
+  --nexus-font-sans:          system-ui, -apple-system, BlinkMacSystemFont,
+                              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+                              "Open Sans", sans-serif;
+  --nexus-font-mono:          ui-monospace, "SFMono-Regular", Consolas,
+                              "Liberation Mono", Menlo, Courier, monospace;
+
+  --nexus-text-xs:            0.6875rem;   /* 11px */
+  --nexus-text-sm:            0.8125rem;   /* 13px */
+  --nexus-text-base:          0.9375rem;   /* 15px */
+  --nexus-text-lg:            1.125rem;    /* 18px */
+  --nexus-text-xl:            1.375rem;    /* 22px */
+
+  --nexus-space-1:            4px;
+  --nexus-space-2:            8px;
+  --nexus-space-3:            12px;
+  --nexus-space-4:            16px;
+  --nexus-space-5:            20px;
+  --nexus-space-6:            24px;
+
+  --nexus-radius-sm:          4px;
+  --nexus-radius-md:          6px;
+  --nexus-radius-lg:          8px;
+  --nexus-radius-full:        9999px;
+
+  --nexus-transition-fast:    120ms cubic-bezier(0.16, 1, 0.3, 1);
+  --nexus-transition-base:    180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  /* ── Backgrounds & Surfaces (Dark Aesthetic) ──────────────────────────── */
+  --nexus-bg-base:            #151922; /* Main page background */
+  --nexus-bg-header:          #1B2230; /* Nexus Bar header */
+  --nexus-bg-surface:         #1B2230; /* Secondary background */
+  --nexus-bg-card:            #202633; /* Primary card surface */
+  --nexus-bg-elevated:        #202633; /* Elevated surfaces / modal / inputs */
+  --nexus-bg-elevated-hover:  #272E3D; /* Hover for elevated elements */
+  --nexus-bg-active:          #2F3749; /* Pressed/active states */
+  --nexus-bg-row:             #1C2332; /* Status feature row background */
+
+  /* ── Borders & Dividers ───────────────────────────────────────────────── */
+  --nexus-border-subtle:      #262E3D; /* Subtle dividers */
+  --nexus-border-default:     #303A4B; /* Card & container borders */
+  --nexus-border-accent:      #815239; /* Accent-tinted borders */
+  --nexus-border-focus:       #E08A50; /* Keyboard / interactive focus ring */
+
+  /* ── Brand & Strong Terracotta Accents ────────────────────────────────── */
+  --nexus-accent-primary:     #E08A50; /* Primary strong terracotta for dark mode */
+  --nexus-accent-hover:       #EDA16F; /* Terracotta hover */
+  --nexus-accent-active:      #C66A32; /* Terracotta active/pressed */
+  --nexus-accent-subtle:      rgba(224, 138, 80, 0.14);
+  --nexus-accent-muted:       rgba(224, 138, 80, 0.28);
+
+  /* ── Typography & Foreground ──────────────────────────────────────────── */
+  --nexus-text-primary:       #F1F3F6; /* High-contrast soft white */
+  --nexus-text-secondary:     #A5AFBF; /* Muted secondary slate */
+  --nexus-text-tertiary:      #78869B; /* Tertiary/placeholder */
+  --nexus-text-inverse:       #FFFFFF; /* Pure white */
+
+  /* ── Academic Status Indicators ───────────────────────────────────────── */
+  --nexus-status-safe:        #219B75;
+  --nexus-status-safe-bg:     rgba(33, 155, 117, 0.16);
+  --nexus-status-warning:     #D99A36;
+  --nexus-status-warning-bg:  rgba(217, 154, 54, 0.16);
+  --nexus-status-error:       #D85F65;
+  --nexus-status-error-bg:    rgba(216, 95, 101, 0.16);
+
+  /* ── Shadows ──────────────────────────────────────────────────── */
+  --nexus-shadow-sm:          0 1px 3px rgba(0, 0, 0, 0.35);
+  --nexus-shadow-md:          0 4px 12px rgba(0, 0, 0, 0.45);
+}

@@ -1,0 +1,77 @@
+/* ==========================================================================
+   LpuNexus Global Styles
+   Base reset, typography, scrollbar and accessibility defaults
+   ========================================================================== */
+
+@import './variables.css';
+
+/* ── Reset ──────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Document Defaults ──────────────────────────────────────────────────── */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--nexus-font-sans);
+  font-size: var(--nexus-text-base);
+  color: var(--nexus-text-primary);
+  background-color: var(--nexus-bg-base);
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  transition: background-color var(--nexus-transition-base), color var(--nexus-transition-base);
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nexus-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nexus-border-default);
+  border-radius: var(--nexus-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nexus-text-tertiary);
+}
+
+/* ── Focus Indicators ───────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--nexus-border-focus);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
